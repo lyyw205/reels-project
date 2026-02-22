@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "labels": {
+    "exterior": {
+      "text_prompts": [
+        "a photo of a building exterior",
+        "a hotel or resort exterior view",
+        "건물 외관 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    },
+    "lobby": {
+      "text_prompts": [
+        "a photo of a hotel lobby",
+        "a reception or entrance hall",
+        "호텔 로비 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    },
+    "bedroom": {
+      "text_prompts": [
+        "a photo of a bedroom",
+        "a hotel room with a bed",
+        "침실 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    },
+    "bathroom": {
+      "text_prompts": [
+        "a photo of a bathroom",
+        "a bathroom with a bathtub or shower",
+        "욕실 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    },
+    "pool": {
+      "text_prompts": [
+        "a photo of a swimming pool",
+        "a pool area at a resort",
+        "수영장 사진"
+      ],
+      "count": 6,
+      "source": "default"
+    },
+    "restaurant": {
+      "text_prompts": [
+        "a photo of a restaurant or dining area",
+        "a cafe or bar interior",
+        "레스토랑 또는 식당 사진"
+      ],
+      "count": 8,
+      "source": "default"
+    },
+    "view": {
+      "text_prompts": [
+        "a scenic view or landscape photo",
+        "a window view or balcony view",
+        "전망 또는 풍경 사진"
+      ],
+      "count": 4,
+      "source": "default"
+    },
+    "amenity": {
+      "text_prompts": [
+        "a photo of hotel amenities",
+        "spa or gym or fitness center",
+        "부대시설 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    },
+    "outdoor_bath": {
+      "text_prompts": [
+        "a photo of an outdoor hot spring bath",
+        "an open-air onsen or hot tub",
+        "야외 노천탕 사진",
+        "온천 노천탕"
+      ],
+      "count": 22,
+      "source": "default"
+    },
+    "kitchen": {
+      "text_prompts": [
+        "a photo of a kitchen",
+        "a kitchenette in a hotel room",
+        "주방 사진"
+      ],
+      "count": 2,
+      "source": "default"
+    },
+    "garden": {
+      "text_prompts": [
+        "a photo of a garden or courtyard",
+        "an outdoor garden area",
+        "정원 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    },
+    "terrace": {
+      "text_prompts": [
+        "a photo of a terrace or balcony",
+        "an outdoor deck with seating",
+        "테라스 또는 발코니 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    },
+    "other": {
+      "text_prompts": [
+        "a miscellaneous photo",
+        "기타 사진"
+      ],
+      "count": 0,
+      "source": "default"
+    }
+  }
+}

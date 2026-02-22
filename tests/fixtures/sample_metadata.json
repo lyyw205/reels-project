@@ -1,0 +1,10 @@
+{
+  "source": "test_video.mp4",
+  "duration_sec": 15.0,
+  "fps": 30.0,
+  "width": 1080,
+  "height": 1920,
+  "resolution": "1080x1920",
+  "has_audio": true,
+  "codec": "h264"
+}

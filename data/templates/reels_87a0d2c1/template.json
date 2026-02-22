@@ -1,0 +1,788 @@
+{
+  "template_id": "reels_87a0d2c1",
+  "source_url": null,
+  "format": {
+    "aspect": "9:16",
+    "fps": 30,
+    "width": 482,
+    "height": 866
+  },
+  "total_duration_sec": 17.664,
+  "shot_count": 21,
+  "shots": [
+    {
+      "shot_id": 0,
+      "start_sec": 0.0,
+      "end_sec": 0.8,
+      "duration_sec": 0.8,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.08860905170440674,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0000_kf_0.jpg",
+        "shot_0000_kf_1.jpg",
+        "shot_0000_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "피드백 뺏어 버탑 반대만 치고 집 가는 거 메이지다운 모습이었다",
+        "vo_ref": "{VO_1}",
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 1,
+      "start_sec": 0.8,
+      "end_sec": 1.867,
+      "duration_sec": 1.067,
+      "place_label": "kitchen",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.11417989730834961,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0001_kf_0.jpg",
+        "shot_0001_kf_1.jpg",
+        "shot_0001_kf_2.jpg"
+      ],
+      "overlays": [
+        {
+          "kind": "caption",
+          "start_sec": 0.8,
+          "end_sec": 1.867,
+          "box": {
+            "x": 0.1846,
+            "y": 0.3776,
+            "w": 0.1369,
+            "h": 0.0462
+          },
+          "style": {
+            "fill": "#FFFFFF",
+            "stroke": null,
+            "shadow": false,
+            "font_size_ratio": null
+          },
+          "text": "동화",
+          "animation": null
+        },
+        {
+          "kind": "caption",
+          "start_sec": 0.8,
+          "end_sec": 1.867,
+          "box": {
+            "x": 0.1846,
+            "y": 0.3753,
+            "w": 0.6349,
+            "h": 0.0485
+          },
+          "style": {
+            "fill": "#FFFFFF",
+            "stroke": null,
+            "shadow": false,
+            "font_size_ratio": null
+          },
+          "text": "동화 속한 장면 같은 곳",
+          "animation": null
+        },
+        {
+          "kind": "caption",
+          "start_sec": 0.8,
+          "end_sec": 1.867,
+          "box": {
+            "x": 0.388,
+            "y": 0.3753,
+            "w": 0.4315,
+            "h": 0.0508
+          },
+          "style": {
+            "fill": "#FFFFFF",
+            "stroke": null,
+            "shadow": false,
+            "font_size_ratio": null
+          },
+          "text": "한 장면 같은 곳",
+          "animation": null
+        }
+      ],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "피드백 뺏어 버탑 반대만 치고 집 가는 거 메이지다운 모습이었다",
+        "vo_ref": "{VO_2}",
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 2,
+      "start_sec": 1.867,
+      "end_sec": 2.567,
+      "duration_sec": 0.7,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.025102564692497255,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0002_kf_0.jpg",
+        "shot_0002_kf_1.jpg",
+        "shot_0002_kf_2.jpg"
+      ],
+      "overlays": [
+        {
+          "kind": "caption",
+          "start_sec": 1.867,
+          "end_sec": 2.567,
+          "box": {
+            "x": 0.1805,
+            "y": 0.3776,
+            "w": 0.639,
+            "h": 0.0462
+          },
+          "style": {
+            "fill": "#FFFFFF",
+            "stroke": null,
+            "shadow": false,
+            "font_size_ratio": null
+          },
+          "text": "자연 한가운데서 즐기는",
+          "animation": null
+        }
+      ],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "피드백 뺏어 버탑 반대만 치고 집 가는 거 메이지다운 모습이었다",
+        "vo_ref": "{VO_3}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 3,
+      "start_sec": 2.567,
+      "end_sec": 3.333,
+      "duration_sec": 0.766,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.04677975475788117,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0003_kf_0.jpg",
+        "shot_0003_kf_1.jpg",
+        "shot_0003_kf_2.jpg"
+      ],
+      "overlays": [
+        {
+          "kind": "caption",
+          "start_sec": 2.567,
+          "end_sec": 3.333,
+          "box": {
+            "x": 0.3755,
+            "y": 0.3753,
+            "w": 0.3361,
+            "h": 0.0485
+          },
+          "style": {
+            "fill": "#FFFFFF",
+            "stroke": null,
+            "shadow": false,
+            "font_size_ratio": null
+          },
+          "text": "이외 노전량",
+          "animation": null
+        }
+      ],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "피드백 뺏어 버탑 반대만 치고 집 가는 거 메이지다운 모습이었다",
+        "vo_ref": "{VO_4}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 4,
+      "start_sec": 3.333,
+      "end_sec": 4.133,
+      "duration_sec": 0.8,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.022710107266902924,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0004_kf_0.jpg",
+        "shot_0004_kf_1.jpg",
+        "shot_0004_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "예 기본이죠",
+        "vo_ref": "{VO_5}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 5,
+      "start_sec": 4.133,
+      "end_sec": 5.467,
+      "duration_sec": 1.334,
+      "place_label": "pool",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.09249833822250367,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0005_kf_0.jpg",
+        "shot_0005_kf_1.jpg",
+        "shot_0005_kf_2.jpg"
+      ],
+      "overlays": [
+        {
+          "kind": "caption",
+          "start_sec": 4.133,
+          "end_sec": 5.467,
+          "box": {
+            "x": 0.1805,
+            "y": 0.3764,
+            "w": 0.6411,
+            "h": 0.0497
+          },
+          "style": {
+            "fill": "#FFFFFF",
+            "stroke": null,
+            "shadow": false,
+            "font_size_ratio": null
+          },
+          "text": "짐질방 옷으로 갈아입고",
+          "animation": null
+        }
+      ],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "예 기본이죠",
+        "vo_ref": "{VO_6}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 6,
+      "start_sec": 5.467,
+      "end_sec": 6.6,
+      "duration_sec": 1.133,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.06018810272216797,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0006_kf_0.jpg",
+        "shot_0006_kf_1.jpg",
+        "shot_0006_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": false,
+        "speech_text": null,
+        "vo_ref": null,
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 7,
+      "start_sec": 6.6,
+      "end_sec": 7.633,
+      "duration_sec": 1.033,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.032209393382072446,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0007_kf_0.jpg",
+        "shot_0007_kf_1.jpg",
+        "shot_0007_kf_2.jpg"
+      ],
+      "overlays": [
+        {
+          "kind": "caption",
+          "start_sec": 6.6,
+          "end_sec": 7.633,
+          "box": {
+            "x": 0.2656,
+            "y": 0.3788,
+            "w": 0.4585,
+            "h": 0.0462
+          },
+          "style": {
+            "fill": "#FFFFFF",
+            "stroke": null,
+            "shadow": false,
+            "font_size_ratio": null
+          },
+          "text": "운리들만의 시간",
+          "animation": null
+        }
+      ],
+      "audio": {
+        "has_speech": false,
+        "speech_text": null,
+        "vo_ref": null,
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 8,
+      "start_sec": 7.633,
+      "end_sec": 8.333,
+      "duration_sec": 0.7,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.01835671216249466,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0008_kf_0.jpg",
+        "shot_0008_kf_1.jpg",
+        "shot_0008_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": false,
+        "speech_text": null,
+        "vo_ref": null,
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 9,
+      "start_sec": 8.333,
+      "end_sec": 9.067,
+      "duration_sec": 0.734,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.0704248607158661,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0009_kf_0.jpg",
+        "shot_0009_kf_1.jpg",
+        "shot_0009_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "아니 근데 퓨 버프 됐냐 빅토르 이속 증강 먹은 거 아니야?",
+        "vo_ref": "{VO_10}",
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 10,
+      "start_sec": 9.067,
+      "end_sec": 9.8,
+      "duration_sec": 0.733,
+      "place_label": "pool",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.009127970784902573,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0010_kf_0.jpg",
+        "shot_0010_kf_1.jpg",
+        "shot_0010_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "아니 근데 퓨 버프 됐냐 빅토르 이속 증강 먹은 거 아니야?",
+        "vo_ref": "{VO_11}",
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 11,
+      "start_sec": 9.8,
+      "end_sec": 10.533,
+      "duration_sec": 0.733,
+      "place_label": "restaurant",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.02276175916194916,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0011_kf_0.jpg",
+        "shot_0011_kf_1.jpg",
+        "shot_0011_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "아니 근데 퓨 버프 됐냐 빅토르 이속 증강 먹은 거 아니야?",
+        "vo_ref": "{VO_12}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 12,
+      "start_sec": 10.533,
+      "end_sec": 11.233,
+      "duration_sec": 0.7,
+      "place_label": "restaurant",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.033296459913253786,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0012_kf_0.jpg",
+        "shot_0012_kf_1.jpg",
+        "shot_0012_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "아니 근데 퓨 버프 됐냐 빅토르 이속 증강 먹은 거 아니야?",
+        "vo_ref": "{VO_13}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 13,
+      "start_sec": 11.233,
+      "end_sec": 12.0,
+      "duration_sec": 0.767,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.012322171032428742,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0013_kf_0.jpg",
+        "shot_0013_kf_1.jpg",
+        "shot_0013_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "아니 근데 퓨 버프 됐냐 빅토르 이속 증강 먹은 거 아니야?",
+        "vo_ref": "{VO_14}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 14,
+      "start_sec": 12.0,
+      "end_sec": 12.6,
+      "duration_sec": 0.6,
+      "place_label": "pool",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.03325548470020294,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0014_kf_0.jpg",
+        "shot_0014_kf_1.jpg",
+        "shot_0014_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "쟤 이속이 왜 이렇게 빠르지?",
+        "vo_ref": "{VO_15}",
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 15,
+      "start_sec": 12.6,
+      "end_sec": 13.367,
+      "duration_sec": 0.767,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.036363035440444946,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0015_kf_0.jpg",
+        "shot_0015_kf_1.jpg",
+        "shot_0015_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "쟤 이속이 왜 이렇게 빠르지?",
+        "vo_ref": "{VO_16}",
+        "music_cue": "beat",
+        "beat_aligned": true
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut_on_beat"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 16,
+      "start_sec": 13.367,
+      "end_sec": 14.1,
+      "duration_sec": 0.733,
+      "place_label": "outdoor_bath",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.029873979091644288,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0016_kf_0.jpg",
+        "shot_0016_kf_1.jpg",
+        "shot_0016_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": false,
+        "speech_text": null,
+        "vo_ref": null,
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 17,
+      "start_sec": 14.1,
+      "end_sec": 14.833,
+      "duration_sec": 0.733,
+      "place_label": "restaurant",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.027607440948486328,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0017_kf_0.jpg",
+        "shot_0017_kf_1.jpg",
+        "shot_0017_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "원래 저 정도가 아닌데?",
+        "vo_ref": "{VO_18}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 18,
+      "start_sec": 14.833,
+      "end_sec": 15.533,
+      "duration_sec": 0.7,
+      "place_label": "restaurant",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.12158735990524291,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0018_kf_0.jpg",
+        "shot_0018_kf_1.jpg",
+        "shot_0018_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "원래 저 정도가 아닌데?",
+        "vo_ref": "{VO_19}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 19,
+      "start_sec": 15.533,
+      "end_sec": 16.333,
+      "duration_sec": 0.8,
+      "place_label": "view",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.026009660959243775,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0019_kf_0.jpg",
+        "shot_0019_kf_1.jpg",
+        "shot_0019_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": true,
+        "speech_text": "원래 저 정도가 아닌데?",
+        "vo_ref": "{VO_20}",
+        "music_cue": "beat",
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    },
+    {
+      "shot_id": 20,
+      "start_sec": 16.333,
+      "end_sec": 17.664,
+      "duration_sec": 1.331,
+      "place_label": "view",
+      "camera": {
+        "type": "static",
+        "shake_score": 0.16617676019668579,
+        "speed_factor": 1.0
+      },
+      "keyframe_paths": [
+        "shot_0020_kf_0.jpg",
+        "shot_0020_kf_1.jpg",
+        "shot_0020_kf_2.jpg"
+      ],
+      "overlays": [],
+      "audio": {
+        "has_speech": false,
+        "speech_text": null,
+        "vo_ref": null,
+        "music_cue": null,
+        "beat_aligned": false
+      },
+      "edit": {
+        "speed": 1.0,
+        "transition_out": "cut"
+      },
+      "bpm": 85.2
+    }
+  ],
+  "metadata": {
+    "source_platform": null,
+    "original_resolution": "482x866",
+    "processing_time_sec": null,
+    "analyzer_versions": {}
+  }
+}

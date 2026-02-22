@@ -1,0 +1,72 @@
+[project]
+name = "reels-analyzer"
+version = "0.1.0"
+description = "Reference video structure extraction and template synthesis pipeline"
+requires-python = ">=3.12"
+dependencies = [
+    # Core
+    "pydantic>=2.5",
+    "pydantic-settings>=2.0",
+    "pyyaml>=6.0",
+    "click>=8.1",
+    "rich>=13.0",
+    "python-dotenv>=1.0",
+
+    # Video/Image
+    "opencv-python-headless>=4.9",
+    "numpy>=1.26",
+    "pillow>=10.0",
+    "scenedetect[opencv]>=0.6.4",
+
+    # Audio
+    "librosa>=0.10",
+    "soundfile>=0.12",
+
+    # ML/AI (CPU default)
+    "transformers>=4.36,<5.0",
+    "torch>=2.1",
+    "faster-whisper>=1.0",
+
+    # OCR
+    "easyocr>=1.7",
+
+    # Download
+    "yt-dlp>=2024.1",
+]
+
+[project.optional-dependencies]
+paddleocr = [
+    "paddleocr>=2.7",
+    "paddlepaddle>=2.6",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.2",
+    "mypy>=1.8",
+]
+
+[project.scripts]
+reels = "reels.cli:cli"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["reels*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (requires real video files)",
+    "gpu: marks tests that benefit from GPU",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.mypy]
+python_version = "3.12"
+strict = true

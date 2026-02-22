@@ -1,0 +1,49 @@
+{
+  "template_id": "reels_test_001",
+  "source_url": null,
+  "format": {"aspect": "9:16", "fps": 30, "width": 1080, "height": 1920},
+  "total_duration_sec": 15.0,
+  "shot_count": 2,
+  "shots": [
+    {
+      "shot_id": 0,
+      "start_sec": 0.0,
+      "end_sec": 7.0,
+      "duration_sec": 7.0,
+      "place_label": "exterior",
+      "camera": {"type": "gimbal_smooth", "shake_score": 0.1, "speed_factor": 1.0},
+      "keyframe_paths": [],
+      "overlays": [
+        {
+          "kind": "caption",
+          "start_sec": 0.5,
+          "end_sec": 3.0,
+          "box": {"x": 0.1, "y": 0.7, "w": 0.8, "h": 0.1},
+          "style": {"fill": "#FFFFFF", "stroke": "#000000", "shadow": true},
+          "text": "{HOOK_LINE}",
+          "animation": null
+        }
+      ],
+      "audio": {"has_speech": true, "speech_text": "Hello", "vo_ref": "{VO_1}", "music_cue": "beat", "beat_aligned": true},
+      "edit": {"speed": 1.0, "transition_out": "cut_on_beat"}
+    },
+    {
+      "shot_id": 1,
+      "start_sec": 7.0,
+      "end_sec": 15.0,
+      "duration_sec": 8.0,
+      "place_label": "bedroom",
+      "camera": {"type": "pan_right", "shake_score": 0.05, "speed_factor": 1.0},
+      "keyframe_paths": [],
+      "overlays": [],
+      "audio": {"has_speech": false, "speech_text": null, "vo_ref": null, "music_cue": null, "beat_aligned": false},
+      "edit": {"speed": 1.0, "transition_out": "cut"}
+    }
+  ],
+  "metadata": {
+    "source_platform": "instagram",
+    "original_resolution": "1080x1920",
+    "processing_time_sec": null,
+    "analyzer_versions": {}
+  }
+}

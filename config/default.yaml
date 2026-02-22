@@ -1,0 +1,163 @@
+pipeline:
+  work_dir: "./work"
+  cache_enabled: true
+  log_level: "INFO"
+  max_video_duration_sec: 300
+  cleanup_keyframes_after_synthesis: false
+
+ingest:
+  normalize:
+    strategy: "preserve_aspect"
+    max_short_side: 1080
+    target_fps: 30
+    audio_sample_rate: 16000
+    video_codec: "libx264"
+    audio_codec: "aac"
+
+segmentation:
+  detector: "pyscenedetect"
+  threshold: 27.0
+  min_shot_duration_sec: 0.25
+  merge_similar_threshold: 0.92
+
+analysis:
+  parallel: false
+
+  place:
+    model: "openai/clip-vit-base-patch32"
+    keyframes_per_shot: 3
+    taxonomy_path: "data/taxonomy.json"
+    auto_discover: true
+    discovery_threshold: 0.15
+    ref_match_threshold: 0.75
+    batch_size: 16
+
+  camera:
+    optical_flow_method: "farneback"
+    sample_interval_frames: 2
+    motion_threshold: 2.0
+    categories:
+      - "static"
+      - "pan_left"
+      - "pan_right"
+      - "tilt_up"
+      - "tilt_down"
+      - "push_in"
+      - "pull_out"
+      - "handheld"
+      - "gimbal_smooth"
+
+  subtitle:
+    engine: "easyocr"
+    languages: ["ko", "en"]
+    confidence_threshold: 0.6
+    dedup_iou_threshold: 0.5
+    voting_window_frames: 5
+    exclude_bottom_ratio: 0.85
+
+  speech:
+    model: "small"
+    language: "ko"
+    compute_type: "int8"
+    word_timestamps: true
+    vad_filter: true
+
+  rhythm:
+    hop_length: 512
+    onset_strength_threshold: 0.5
+    beat_tracking_method: "librosa"
+
+synthesis:
+  template_version: "1.0"
+  include_keyframe_images: true
+  overlay_position_normalize: true
+  keyframe_format: "jpeg"
+  keyframe_quality: 85
+
+storage:
+  templates_dir: "./data/templates"
+
+db:
+  path: "./data/templates.db"
+
+production:
+  feature_extraction:
+    backend: "claude"
+    model: "claude-sonnet-4-20250514"
+    max_features_per_image: 5
+    max_concurrent: 5
+    merge_threshold: 0.8
+
+  claim_gate:
+    confirmed_threshold: 0.75
+    probable_threshold: 0.50
+    multi_evidence_bonus: 0.10
+    factual_words: ["무료", "제공", "무제한", "포함", "운영"]
+
+  copy:
+    max_caption_chars: 14
+    max_caption_lines: 2
+    hook_min_chars: 7
+    hook_max_chars: 12
+
+  template_matching:
+    duration_range: [10.0, 15.0]
+    target_shot_count: [6, 8]
+    weights:
+      place_overlap: 0.30
+      duration_fit: 0.20
+      camera_variety: 0.15
+      rhythm_match: 0.15
+      shot_count_fit: 0.20
+
+  web_verification:
+    enabled: true
+    max_queries: 4
+    trusted_domains: ["booking.com", "hotels.com", "naver.com", "kakao.com"]
+
+  render:
+    default_music_volume: 0.3
+    ken_burns_default: true
+    safe_area_margin: 0.15
+
+  creative_team:
+    default_model: "claude-sonnet-4-20250514"
+    max_concurrent: 3
+    cache_dir: ".cache/creative"
+    max_revisions: 2
+
+    planner:
+      temperature: 0.8
+      max_tokens: 1024
+
+    director:
+      temperature: 0.5
+      max_tokens: 2048
+
+    writer:
+      temperature: 0.9
+      max_tokens: 1536
+
+    reviewer:
+      temperature: 0.2
+      max_tokens: 1024
+
+    narrative_structures:
+      reveal:
+        description: "점진적 공개: 외관 → 내부 → 핵심 어메니티"
+        preferred_when:
+          - "hero_feature category가 AMENITY"
+          - "이미지 중 exterior 존재"
+      highlight:
+        description: "임팩트 우선: 베스트 Feature → 보조 → CTA"
+        preferred_when:
+          - "CONFIRMED feature가 2개 이상"
+      story:
+        description: "동선 기반: 체크인 → 객실 → 식사 → 힐링"
+        preferred_when:
+          - "이미지 5장 이상"
+          - "category 다양성 높음"
+      comparison:
+        description: "반전: 평범한 외관 → 놀라운 내부"
+        preferred_when:
+          - "exterior + amenity 조합"
