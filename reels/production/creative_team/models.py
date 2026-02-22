@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 from enum import StrEnum
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
 
 from pydantic import BaseModel, Field
 
 from reels.models.template import CameraType, EditInfo, TransitionType
+
+if TYPE_CHECKING:
+    from reels.production.models import StoryboardShot
 from reels.production.models import ClaimLevel, ShotCopy, ShotRole
 
 
@@ -79,7 +82,7 @@ class PlannedShot(BaseModel):
             claim_level=claim_level,
             place_label=self.feature_tag or "other",
             camera_suggestion=self.camera,
-            copy=copy,
+            shot_copy=copy,
             edit=EditInfo(speed=1.0, transition_out=self.transition),
         )
 

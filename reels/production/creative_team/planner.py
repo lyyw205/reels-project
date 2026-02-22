@@ -7,7 +7,7 @@ from typing import Any
 
 from reels.production.creative_team.llm import CreativeLLM
 from reels.production.creative_team.models import CreativeBrief, QAIssue
-from reels.production.models import AccommodationInput, ClaimLevel, MatchResult, VerifiedFeature
+from reels.production.models import AccommodationInput, MatchResult, VerifiedFeature
 
 logger = logging.getLogger(__name__)
 

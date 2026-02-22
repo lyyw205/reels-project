@@ -183,7 +183,7 @@ class TestStoryboardShot:
         assert shot.claim_level is None
         assert shot.place_label == "other"
         assert shot.camera_suggestion == CameraType.STATIC
-        assert isinstance(shot.copy, ShotCopy)
+        assert isinstance(shot.shot_copy, ShotCopy)
         assert isinstance(shot.edit, EditInfo)
 
     def test_edit_default_transition(self) -> None:

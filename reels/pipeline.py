@@ -17,9 +17,7 @@ from reels.analysis import (
     SpeechAnalyzer,
     SubtitleAnalyzer,
 )
-from reels.config import get_config
 from reels.db.repository import TemplateRepository
-from reels.exceptions import ReelsError
 from reels.ingest import ingest_video
 from reels.models.template import Template
 from reels.segmentation import segment_video
@@ -89,6 +87,29 @@ class PipelineState:
             "stage_data": {},
         }
         self._save()
+
+
+class AnalysisPipeline:
+    """Thin wrapper around run_pipeline for object-oriented usage."""
+
+    def __init__(self, config: dict[str, Any] | None = None) -> None:
+        self.config = config or {}
+
+    def run(
+        self,
+        source: str,
+        work_dir: Path,
+        save_to_db: bool = False,
+        resume: bool = False,
+    ) -> "Template":
+        """Run the full analysis pipeline."""
+        return run_pipeline(
+            source=source,
+            work_dir=work_dir,
+            config=self.config,
+            save_to_db=save_to_db,
+            resume=resume,
+        )
 
 
 def run_pipeline(

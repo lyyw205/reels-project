@@ -34,7 +34,7 @@
         "a bathroom with a bathtub or shower",
         "욕실 사진"
       ],
-      "count": 0,
+      "count": 1,
       "source": "default"
     },
     "pool": {
@@ -52,7 +52,7 @@
         "a cafe or bar interior",
         "레스토랑 또는 식당 사진"
       ],
-      "count": 8,
+      "count": 12,
       "source": "default"
     },
     "view": {
@@ -61,7 +61,7 @@
         "a window view or balcony view",
         "전망 또는 풍경 사진"
       ],
-      "count": 4,
+      "count": 6,
       "source": "default"
     },
     "amenity": {
@@ -80,7 +80,7 @@
         "야외 노천탕 사진",
         "온천 노천탕"
       ],
-      "count": 22,
+      "count": 24,
       "source": "default"
     },
     "kitchen": {
@@ -107,7 +107,7 @@
         "an outdoor deck with seating",
         "테라스 또는 발코니 사진"
       ],
-      "count": 0,
+      "count": 8,
       "source": "default"
     },
     "other": {

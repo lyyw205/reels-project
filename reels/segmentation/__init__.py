@@ -5,9 +5,9 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
-from reels.exceptions import SegmentationError
+from reels.exceptions import SegmentationError as SegmentationError
 from reels.models.metadata import VideoMetadata
-from reels.models.shot import SegmentationResult, Shot
+from reels.models.shot import SegmentationResult, Shot as Shot
 from reels.segmentation.detector import ShotDetector
 from reels.segmentation.postprocess import (
     boundaries_to_shots,

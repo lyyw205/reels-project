@@ -22,7 +22,7 @@ class RhythmAnalyzer:
         self.hop_length: int = cfg.get("hop_length", 512)
         self.onset_threshold: float = cfg.get("onset_strength_threshold", 0.5)
         self._audio: np.ndarray | None = None
-        self._sr: int = 0
+        self._sr: int | float = 0
         self._beats: np.ndarray | None = None
         self._onsets: np.ndarray | None = None
         self._bpm: float = 0.0
@@ -70,18 +70,18 @@ class RhythmAnalyzer:
 
         # Find beats and onsets within shot boundaries
         beats_in_shot = [
-            round(float(b), 3) for b in self._beats
+            round(float(b), 3) for b in self._beats  # type: ignore[union-attr]
             if shot.start_sec <= b <= shot.end_sec
         ]
         onsets_in_shot = [
-            round(float(o), 3) for o in self._onsets
+            round(float(o), 3) for o in self._onsets  # type: ignore[union-attr]
             if shot.start_sec <= o <= shot.end_sec
         ]
 
         # Check if shot boundary aligns with a beat (within 0.1s tolerance)
         beat_aligned = any(
             abs(b - shot.start_sec) < 0.1 or abs(b - shot.end_sec) < 0.1
-            for b in self._beats
+            for b in self._beats  # type: ignore[union-attr]
         )
 
         # Determine music cue

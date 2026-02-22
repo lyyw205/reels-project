@@ -157,7 +157,7 @@ def test_planned_shot_to_storyboard_shot():
     assert sb_shot.claim_level == ClaimLevel.CONFIRMED
     assert sb_shot.place_label == "ocean_view"
     assert sb_shot.camera_suggestion == CameraType.PAN_LEFT
-    assert sb_shot.copy.hook_line == "오션뷰"
+    assert sb_shot.shot_copy.hook_line == "오션뷰"
     assert sb_shot.edit.transition_out == TransitionType.DISSOLVE
 
 

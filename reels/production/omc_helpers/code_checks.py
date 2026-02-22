@@ -16,7 +16,6 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any
 
 from reels.production.creative_team.models import QAIssue
 from reels.production.models import ClaimLevel, Storyboard, VerifiedFeature
@@ -47,9 +46,9 @@ def run_code_checks(
         # Check factual words in non-CONFIRMED copy
         if claim_level and claim_level != ClaimLevel.CONFIRMED:
             texts_to_check: list[tuple[str, str]] = []
-            if shot.copy.hook_line:
-                texts_to_check.append(("hook_line", shot.copy.hook_line))
-            for j, cap in enumerate(shot.copy.caption_lines):
+            if shot.shot_copy.hook_line:
+                texts_to_check.append(("hook_line", shot.shot_copy.hook_line))
+            for j, cap in enumerate(shot.shot_copy.caption_lines):
                 texts_to_check.append((f"caption_lines[{j}]", cap.text))
 
             for field, text in texts_to_check:
@@ -68,20 +67,20 @@ def run_code_checks(
                         )
 
         # Check hook_line char limit
-        if shot.copy.hook_line and len(shot.copy.hook_line) > 12:
+        if shot.shot_copy.hook_line and len(shot.shot_copy.hook_line) > 12:
             issues.append(
                 QAIssue(
                     severity="warning",
                     responsible_agent="writer",
                     target_element=f"shots[{i}].copy.hook_line",
-                    current_value=shot.copy.hook_line,
+                    current_value=shot.shot_copy.hook_line,
                     expected_behavior="hook_line 최대 12자",
                     related_rule="hook_max_chars",
                 )
             )
 
         # Check caption char limits
-        for j, cap in enumerate(shot.copy.caption_lines):
+        for j, cap in enumerate(shot.shot_copy.caption_lines):
             if len(cap.text) > 14:
                 issues.append(
                     QAIssue(

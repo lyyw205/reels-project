@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 from typing import Any
 
 import cv2
@@ -27,7 +26,7 @@ class SubtitleAnalyzer:
         self.voting_window: int = cfg.get("voting_window_frames", 5)
         self.exclude_bottom_ratio: float = cfg.get("exclude_bottom_ratio", 0.85)
         self.dedup_iou: float = cfg.get("dedup_iou_threshold", 0.5)
-        self._reader = None
+        self._reader: Any = None
 
     @property
     def name(self) -> str:

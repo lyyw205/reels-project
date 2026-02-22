@@ -82,7 +82,7 @@ db:
 
 production:
   feature_extraction:
-    backend: "claude"
+    backend: "clip"
     model: "claude-sonnet-4-20250514"
     max_features_per_image: 5
     max_concurrent: 5
@@ -119,6 +119,12 @@ production:
     default_music_volume: 0.3
     ken_burns_default: true
     safe_area_margin: 0.15
+
+  i2v:
+    enabled: false
+    model: "minimax/video-01-live"
+    max_concurrent: 2
+    output_format: "mp4"
 
   creative_team:
     default_model: "claude-sonnet-4-20250514"

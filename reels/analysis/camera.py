@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -53,7 +52,7 @@ class CameraAnalyzer:
                 break
 
             curr_gray = cv2.cvtColor(curr_frame, cv2.COLOR_BGR2GRAY)
-            flow = cv2.calcOpticalFlowFarneback(
+            flow = cv2.calcOpticalFlowFarneback(  # type: ignore[call-overload]
                 prev_gray, curr_gray, None,
                 pyr_scale=0.5, levels=3, winsize=15,
                 iterations=3, poly_n=5, poly_sigma=1.2, flags=0,

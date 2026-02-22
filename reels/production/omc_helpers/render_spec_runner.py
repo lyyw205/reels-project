@@ -21,7 +21,10 @@ import argparse
 import logging
 import sys
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from reels.production.models import RenderSpec, Storyboard
 
 logger = logging.getLogger(__name__)
 

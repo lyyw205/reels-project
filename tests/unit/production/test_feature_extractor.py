@@ -35,9 +35,9 @@ def _make_feature(
 
 
 def _make_extractor() -> FeatureExtractor:
-    """Return a FeatureExtractor with ClaudeVisionBackend and ResponseCache mocked out."""
+    """Return a FeatureExtractor with backend and ResponseCache mocked out."""
     with (
-        patch("reels.production.feature_extractor.ClaudeVisionBackend"),
+        patch("reels.production.feature_extractor._create_backend", return_value=MagicMock()),
         patch("reels.production.feature_extractor.ResponseCache"),
     ):
         extractor = FeatureExtractor()

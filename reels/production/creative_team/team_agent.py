@@ -12,7 +12,7 @@ from typing import Any
 from reels.production.claim_gate import ClaimGate
 from reels.production.copy_writer import CopyWriter
 from reels.production.creative_team.llm import CreativeLLM
-from reels.production.creative_team.models import QAIssue, QAReport
+from reels.production.creative_team.models import CreativeBrief, QAIssue, QAReport, ShotPlan
 from reels.production.creative_team.planner import CreativePlanner
 from reels.production.creative_team.director import ProducerDirector
 from reels.production.creative_team.writer import CreativeWriter
@@ -49,6 +49,7 @@ class CreativeTeamAgent:
         config: dict[str, Any] | None = None,
         repo: Any = None,
         archiver: Any = None,
+        enable_i2v: bool = False,
     ) -> None:
         cfg = config or {}
         team_cfg = cfg.get("production", {}).get("creative_team", {})
@@ -81,6 +82,8 @@ class CreativeTeamAgent:
             self.render_spec_gen = RenderSpecGenerator(cfg)
         except ImportError:
             pass
+
+        self.enable_i2v = enable_i2v
 
     async def produce(
         self,
@@ -213,6 +216,10 @@ class CreativeTeamAgent:
                 except Exception as save_err:
                     logger.warning("Failed to save outputs: %s", save_err)
 
+            # Optional I2V conversion
+            if getattr(self, "enable_i2v", False) and output_dir:
+                await self._run_i2v(output_dir)
+
             return ProductionResult(
                 project_id=project_id,
                 status="complete",
@@ -229,6 +236,23 @@ class CreativeTeamAgent:
                 status="failed",
                 errors=[str(e)],
             )
+
+    async def _run_i2v(self, output_dir: Path) -> None:
+        """Run image-to-video conversion on the storyboard."""
+        storyboard_path = output_dir / "storyboard.json"
+        if not storyboard_path.exists():
+            logger.warning("Storyboard not found at %s, skipping I2V", storyboard_path)
+            return
+        try:
+            from reels.production.i2v.runner import run_i2v_pipeline
+            i2v_output = output_dir / "i2v"
+            logger.info("Running I2V conversion...")
+            await run_i2v_pipeline(storyboard_path, i2v_output)
+            logger.info("I2V conversion complete: %s", i2v_output)
+        except ImportError:
+            logger.error("I2V requires the 'replicate' package. Install: pip install reels[i2v]")
+        except Exception as e:
+            logger.error("I2V conversion failed: %s", e)
 
     def _post_validate_copies(
         self,

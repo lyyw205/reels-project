@@ -90,6 +90,7 @@ def _make_agent_with_mocks(
         features = [_make_verified_feature()]
 
     agent = ProductionAgent.__new__(ProductionAgent)
+    agent.enable_i2v = False
 
     storyboard = _make_storyboard()
     render_spec = _make_render_spec(storyboard)
@@ -282,6 +283,7 @@ def test_produce_works_without_template_matcher():
 def test_save_outputs_creates_correct_files(tmp_path):
     """_save_outputs() writes features.json, storyboard.json, render_spec.json, captions.srt, vo.txt."""
     agent = ProductionAgent.__new__(ProductionAgent)
+    agent.enable_i2v = False
     agent.feature_extractor = MagicMock()
     agent.claim_gate = MagicMock()
     agent.copy_writer = MagicMock()

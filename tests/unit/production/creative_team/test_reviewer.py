@@ -54,7 +54,7 @@ def _make_shot(
         end_sec=duration_sec,
         duration_sec=duration_sec,
         feature_tag=feature_tag,
-        copy=ShotCopy(
+        shot_copy=ShotCopy(
             hook_line=hook_line,
             caption_lines=caption_lines or [],
         ),

@@ -8,7 +8,6 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from reels.production.backends.claude_vision import ClaudeVisionBackend
 from reels.production.cache import ResponseCache
 from reels.production.models import (
     AccommodationInput,
@@ -17,6 +16,19 @@ from reels.production.models import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+def _create_backend(config: dict[str, Any] | None = None):
+    """Create VLM backend based on config (clip or claude)."""
+    cfg = (config or {}).get("production", {}).get("feature_extraction", {})
+    backend_name = cfg.get("backend", "clip")
+
+    if backend_name == "clip":
+        from reels.production.backends.clip_vision import CLIPVisionBackend
+        return CLIPVisionBackend(config)
+
+    from reels.production.backends.claude_vision import ClaudeVisionBackend
+    return ClaudeVisionBackend(config)
 
 # Category importance for ranking
 _CATEGORY_WEIGHTS = {
@@ -33,7 +45,7 @@ class FeatureExtractor:
 
     def __init__(self, config: dict[str, Any] | None = None) -> None:
         cfg = (config or {}).get("production", {}).get("feature_extraction", {})
-        self._backend = ClaudeVisionBackend(config)
+        self._backend = _create_backend(config)
         self._cache = ResponseCache(cfg.get("cache_dir", ".cache/vlm"))
         self._semaphore = asyncio.Semaphore(cfg.get("max_concurrent", 5))
         self._merge_threshold = cfg.get("merge_threshold", 0.8)
@@ -51,7 +63,7 @@ class FeatureExtractor:
 
         all_features: list[Feature] = []
         for i, result in enumerate(results):
-            if isinstance(result, Exception):
+            if isinstance(result, BaseException):
                 logger.warning("Image %s analysis failed: %s", images[i].name, result)
                 continue
             all_features.extend(result)

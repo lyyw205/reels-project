@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from pydantic import ValidationError
+from pydantic import BaseModel, ValidationError
 
 
 _MODEL_MAP: dict[str, tuple[str, str]] = {
@@ -48,7 +48,7 @@ _MODEL_MAP: dict[str, tuple[str, str]] = {
 VALID_TYPES = tuple(_MODEL_MAP.keys())
 
 
-def _get_model_class(type_name: str) -> type:
+def _get_model_class(type_name: str) -> type[BaseModel]:
     """Lazy-import and return the Pydantic model class for *type_name*."""
     if type_name not in _MODEL_MAP:
         raise ValueError(

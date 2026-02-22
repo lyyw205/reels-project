@@ -51,7 +51,7 @@ def _make_shot(
         end_sec=duration,
         duration_sec=duration,
         feature_tag=feature_tag,
-        copy=ShotCopy(hook_line=hook_line, caption_lines=caption_lines),
+        shot_copy=ShotCopy(hook_line=hook_line, caption_lines=caption_lines),
     )
 
 
@@ -244,7 +244,7 @@ class TestCLI:
             ],
             capture_output=True,
             text=True,
-            cwd="/home/youngwoo/repos/reels-project",
+            cwd=str(Path(__file__).resolve().parents[4]),
         )
         assert result.returncode == 0
         output = json.loads(result.stdout)

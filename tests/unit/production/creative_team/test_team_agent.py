@@ -80,7 +80,7 @@ def _make_storyboard(project_id: str = "test_proj") -> Storyboard:
             start_sec=0.0,
             end_sec=3.0,
             duration_sec=3.0,
-            copy=ShotCopy(hook_line="이런곳이?"),
+            shot_copy=ShotCopy(hook_line="이런곳이?"),
             edit=EditInfo(),
         ),
         StoryboardShot(
@@ -90,7 +90,7 @@ def _make_storyboard(project_id: str = "test_proj") -> Storyboard:
             end_sec=9.0,
             duration_sec=6.0,
             feature_tag="outdoor_bath",
-            copy=ShotCopy(),
+            shot_copy=ShotCopy(),
             edit=EditInfo(),
         ),
         StoryboardShot(
@@ -99,7 +99,7 @@ def _make_storyboard(project_id: str = "test_proj") -> Storyboard:
             start_sec=9.0,
             end_sec=12.0,
             duration_sec=3.0,
-            copy=ShotCopy(),
+            shot_copy=ShotCopy(),
             edit=EditInfo(),
         ),
     ]
@@ -123,6 +123,7 @@ def _make_agent_with_mocks(
 
     # Use __new__ to bypass __init__ (which would try to create real LLM clients)
     agent = CreativeTeamAgent.__new__(CreativeTeamAgent)
+    agent.enable_i2v = False
     agent._max_revisions = max_revisions
 
     mocks: dict = {}

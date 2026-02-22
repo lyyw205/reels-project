@@ -44,7 +44,7 @@ def _make_shot(
         end_sec=(shot_id + 1) * duration,
         duration_sec=duration,
         asset_path=asset_path,
-        copy=ShotCopy(
+        shot_copy=ShotCopy(
             hook_line=hook_line,
             caption_lines=caption_lines,
             vo_script=vo_script,
@@ -198,7 +198,7 @@ class TestCLI:
             ],
             capture_output=True,
             text=True,
-            cwd="/home/youngwoo/repos/reels-project",
+            cwd=str(Path(__file__).resolve().parents[4]),
         )
         assert result.returncode == 0
         assert (out_dir / "render_spec.json").exists()
@@ -214,6 +214,6 @@ class TestCLI:
             ],
             capture_output=True,
             text=True,
-            cwd="/home/youngwoo/repos/reels-project",
+            cwd=str(Path(__file__).resolve().parents[4]),
         )
         assert result.returncode == 1

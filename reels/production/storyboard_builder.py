@@ -93,7 +93,7 @@ class StoryboardBuilder:
                 claim_level=feature.claim_level if feature else None,
                 place_label=feature.tag_en if feature else "other",
                 camera_suggestion=camera,
-                copy=copy,
+                shot_copy=copy,
                 edit=EditInfo(
                     speed=1.0,
                     transition_out=(

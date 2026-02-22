@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
+from typing import Any
 
 from reels.analysis.base import AnalysisContext
 from reels.models.analysis import SpeechResult, SpeechSegment, SpeechWord
@@ -22,7 +23,7 @@ class SpeechAnalyzer:
         self.compute_type: str = cfg.get("compute_type", "int8")
         self.word_timestamps: bool = cfg.get("word_timestamps", True)
         self.vad_filter: bool = cfg.get("vad_filter", True)
-        self._model = None
+        self._model: Any = None
 
     @property
     def name(self) -> str:

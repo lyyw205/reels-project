@@ -6,7 +6,7 @@ import logging
 from pathlib import Path
 
 from reels.exceptions import NormalizationError
-from reels.models.metadata import NormalizeResult, VideoMetadata
+from reels.models.metadata import NormalizeResult
 from reels.ingest.probe import VideoProber
 from reels.utils.audio import extract_audio_track
 from reels.utils.video import run_ffmpeg

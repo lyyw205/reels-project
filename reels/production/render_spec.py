@@ -11,7 +11,6 @@ from reels.production.models import (
     MusicSpec,
     RenderSpec,
     Storyboard,
-    StoryboardShot,
 )
 
 
@@ -91,10 +90,10 @@ class RenderSpecGenerator:
 
         for shot in storyboard.shots:
             # Include hook_line for shot 0
-            if shot.shot_id == 0 and shot.copy.hook_line:
-                entries.append((shot.start_sec, shot.end_sec, shot.copy.hook_line))
+            if shot.shot_id == 0 and shot.shot_copy.hook_line:
+                entries.append((shot.start_sec, shot.end_sec, shot.shot_copy.hook_line))
 
-            for caption in shot.copy.caption_lines:
+            for caption in shot.shot_copy.caption_lines:
                 # Use caption timing if provided, else fall back to shot timing
                 start = caption.start_sec if caption.start_sec or caption.end_sec else shot.start_sec
                 end = caption.end_sec if caption.start_sec or caption.end_sec else shot.end_sec
@@ -115,9 +114,9 @@ class RenderSpecGenerator:
     def _collect_vo_script(self, storyboard: Storyboard) -> str | None:
         """Collect VO script from all shots."""
         parts = [
-            shot.copy.vo_script
+            shot.shot_copy.vo_script
             for shot in storyboard.shots
-            if shot.copy.vo_script is not None
+            if shot.shot_copy.vo_script is not None
         ]
         if not parts:
             return None

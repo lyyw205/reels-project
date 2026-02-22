@@ -3,11 +3,10 @@
 from __future__ import annotations
 
 import logging
-from typing import Any
 
 from reels.production.creative_team.llm import CreativeLLM
 from reels.production.creative_team.models import QAIssue, QAReport
-from reels.production.models import ClaimLevel, Storyboard, VerifiedFeature
+from reels.production.models import Storyboard, VerifiedFeature
 from reels.production.omc_helpers.code_checks import run_code_checks
 
 logger = logging.getLogger(__name__)
@@ -95,7 +94,8 @@ class QAReviewer:
         # Merge and re-derive verdict based on combined issues
         all_issues = code_issues + llm_report.issues
         has_critical = any(i.severity == "critical" for i in all_issues)
-        verdict = "REVISE" if has_critical else "PASS"
+        from typing import Literal
+        verdict: Literal["PASS", "REVISE"] = "REVISE" if has_critical else "PASS"
 
         logger.debug(
             "QAReviewer.review: %d code issue(s), %d llm issue(s), verdict=%s",

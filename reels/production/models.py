@@ -5,7 +5,7 @@ from __future__ import annotations
 from enum import StrEnum
 from pathlib import Path
 
-from pydantic import BaseModel, Field
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field
 
 from reels.models.template import CameraType, EditInfo, TemplateFormat
 
@@ -90,6 +90,8 @@ class ShotCopy(BaseModel):
 
 
 class StoryboardShot(BaseModel):
+    model_config = ConfigDict(populate_by_name=True, serialize_by_alias=True)
+
     shot_id: int
     role: ShotRole
     start_sec: float
@@ -101,7 +103,11 @@ class StoryboardShot(BaseModel):
     claim_level: ClaimLevel | None = None
     place_label: str = "other"
     camera_suggestion: CameraType = CameraType.STATIC
-    copy: ShotCopy = Field(default_factory=ShotCopy)
+    shot_copy: ShotCopy = Field(
+        default_factory=ShotCopy,
+        validation_alias=AliasChoices("copy", "shot_copy"),
+        serialization_alias="copy",
+    )
     edit: EditInfo = Field(default_factory=EditInfo)
 
 

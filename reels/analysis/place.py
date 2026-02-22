@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
+from typing import Any
 
 import cv2
 import numpy as np
@@ -36,8 +37,8 @@ class PlaceAnalyzer:
         self.discovery_threshold: float = cfg.get("discovery_threshold", 0.15)
         self.ref_match_threshold: float = cfg.get("ref_match_threshold", 0.75)
 
-        self._model = None
-        self._processor = None
+        self._model: Any = None
+        self._processor: Any = None
         self._taxonomy_store: TaxonomyStore | None = None
 
     @property

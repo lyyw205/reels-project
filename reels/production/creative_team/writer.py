@@ -10,7 +10,7 @@ from pydantic import BaseModel
 
 from reels.production.creative_team.llm import CreativeLLM
 from reels.production.creative_team.models import CreativeBrief, QAIssue, ShotPlan
-from reels.production.models import AccommodationInput, CaptionLine, ShotCopy, VerifiedFeature
+from reels.production.models import AccommodationInput, ShotCopy, VerifiedFeature
 
 logger = logging.getLogger(__name__)
 

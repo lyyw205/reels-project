@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-import yaml
+import yaml  # type: ignore[import-untyped]
 from pydantic import Field
 from pydantic_settings import BaseSettings
 
@@ -139,3 +139,7 @@ def load_yaml_config(config_path: Path | None = None) -> dict[str, Any]:
 def get_config(config_path: Path | None = None) -> dict[str, Any]:
     """Load config from YAML. Environment variables override via pydantic-settings."""
     return load_yaml_config(config_path)
+
+
+# Alias for backward compatibility
+load_config = get_config

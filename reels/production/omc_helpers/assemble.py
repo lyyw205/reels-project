@@ -22,10 +22,18 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import sys
 import uuid
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from reels.production.models import (
+        AccommodationInput,
+        ShotCopy,
+        Storyboard,
+        VerifiedFeature,
+    )
+    from reels.production.creative_team.models import ShotPlan
 
 logger = logging.getLogger(__name__)
 

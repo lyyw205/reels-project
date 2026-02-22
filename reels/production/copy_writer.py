@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-import re
 from typing import Any
 
 from reels.production.models import (
@@ -133,7 +132,7 @@ class CopyWriter:
             line1 = f"{feature.tag} 느낌의"
             line2 = f"{benefits[0]} 공간"
         else:
-            line1 = f"특별한 공간에서"
+            line1 = "특별한 공간에서"
             line2 = f"{benefits[0]} 시간"
 
         line1 = self._trim_to_length(line1, self.max_caption_chars)

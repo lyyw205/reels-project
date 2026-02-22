@@ -269,8 +269,9 @@ def db_search(ctx: click.Context, place: str | None, camera: str | None, duratio
 @click.option("--no-web", is_flag=True, help="웹 검증 비활성화")
 @click.option("--team", is_flag=True, help="크리에이티브 팀 모드 (기획자+PD+작가+검수자)")
 @click.option("--omc-team", is_flag=True, help="OMC 팀 에이전트 모드 (Claude Code 세션 기반 협업)")
+@click.option("--i2v", is_flag=True, default=False, help="Run image-to-video conversion after render spec generation")
 @click.pass_context
-def produce(ctx: click.Context, images: tuple[str, ...], name: str | None, region: str | None, target: str, output: str, no_web: bool, team: bool, omc_team: bool) -> None:
+def produce(ctx: click.Context, images: tuple[str, ...], name: str | None, region: str | None, target: str, output: str, no_web: bool, team: bool, omc_team: bool, i2v: bool) -> None:
     """숙소 이미지로 쇼츠 스토리보드 생성."""
     import asyncio
     from pathlib import Path
@@ -339,11 +340,12 @@ def produce(ctx: click.Context, images: tuple[str, ...], name: str | None, regio
         return
     elif team:
         from reels.production.creative_team.team_agent import CreativeTeamAgent
-        agent = CreativeTeamAgent(config=config)
+        from reels.production.agent import ProductionAgent
+        agent: CreativeTeamAgent | ProductionAgent = CreativeTeamAgent(config=config, enable_i2v=i2v)
         console.print("[bold cyan]Creative Team Mode[/bold cyan] (기획자+PD+작가+검수자)")
     else:
         from reels.production.agent import ProductionAgent
-        agent = ProductionAgent(config=config)
+        agent = ProductionAgent(config=config, enable_i2v=i2v)
 
     result = asyncio.run(agent.produce(input_data, output_dir))
 

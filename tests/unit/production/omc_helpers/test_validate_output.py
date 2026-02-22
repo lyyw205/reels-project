@@ -149,7 +149,7 @@ class TestCLI:
             [sys.executable, "-m", "reels.production.omc_helpers.validate_output", "brief", str(path)],
             capture_output=True,
             text=True,
-            cwd="/home/youngwoo/repos/reels-project",
+            cwd=str(Path(__file__).resolve().parents[4]),
         )
         assert result.returncode == 0
         assert "OK" in result.stdout
@@ -163,7 +163,7 @@ class TestCLI:
             [sys.executable, "-m", "reels.production.omc_helpers.validate_output", "brief", str(path)],
             capture_output=True,
             text=True,
-            cwd="/home/youngwoo/repos/reels-project",
+            cwd=str(Path(__file__).resolve().parents[4]),
         )
         assert result.returncode == 1
         assert "FAILED" in result.stderr
@@ -173,6 +173,6 @@ class TestCLI:
             [sys.executable, "-m", "reels.production.omc_helpers.validate_output", "bogus", "x.json"],
             capture_output=True,
             text=True,
-            cwd="/home/youngwoo/repos/reels-project",
+            cwd=str(Path(__file__).resolve().parents[4]),
         )
         assert result.returncode == 1

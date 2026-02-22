@@ -170,7 +170,7 @@ class TaxonomyStore:
     def _save_embeddings(self) -> None:
         if self._ref_embeddings:
             self._embeddings_path.parent.mkdir(parents=True, exist_ok=True)
-            np.savez(str(self._embeddings_path), **self._ref_embeddings)
+            np.savez(str(self._embeddings_path), **self._ref_embeddings)  # type: ignore[arg-type]
 
     def save(self) -> None:
         """Explicitly save all pending changes."""
