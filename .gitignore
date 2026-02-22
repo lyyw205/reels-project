@@ -32,7 +32,14 @@ build/
 data/samples/
 data/taxonomy.embeddings.npz
 data/templates.db
+data/templates/
 
 # Work output
 work/
 output/
+
+# Remotion (downstream consumer)
+renderer/
+
+# VLM cache
+.cache/
