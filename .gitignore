@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+
+# Environment
+.env
+!.env.example
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Cache
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Claude Code
+.claude/
+
+# OMC
+.omc/
+
+# Data (large files)
+data/samples/
+data/taxonomy.embeddings.npz
+data/templates.db
+
+# Work output
+work/
+output/
