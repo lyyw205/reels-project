@@ -22,6 +22,7 @@ reels analyze-shots <video_path>         # per-shot analysis only
 # Production (shorts storyboard generation)
 reels produce <img1> <img2> ... --name "숙소명" --target couple --output output/
 reels produce <img1> <img2> --no-web     # skip web verification
+reels produce <img1> <img2> --i2v       # with image-to-video conversion
 
 # Template DB
 reels db list
@@ -29,7 +30,7 @@ reels db search --place bedroom
 reels db export <template_id> out.json
 
 # Tests
-.venv/bin/python -m pytest tests/ -q              # all tests (426 passed)
+.venv/bin/python -m pytest tests/ -q              # all tests (575 passed)
 .venv/bin/python -m pytest tests/unit/production/ -q  # production only
 .venv/bin/python -m pytest tests/unit/test_cli_produce.py -q  # single file
 .venv/bin/python -m pytest tests/ --run-slow       # include slow tests
@@ -67,6 +68,7 @@ reels/production/agent.py (ProductionAgent orchestrator)
   → copy_writer.py         marketing copy generation with factual claims checking
   → storyboard_builder.py  shot assembly (role assignment, timing, asset mapping)
   → render_spec.py         Remotion render spec + SRT subtitles
+  → i2v/                   (optional Image-to-Video, --i2v flag, requires pip install ".[i2v]")
 ```
 
 ### Shared
@@ -79,7 +81,7 @@ reels/production/agent.py (ProductionAgent orchestrator)
 ## Key Patterns
 
 ### Protocol pattern
-`Analyzer` (analysis) and `VLMBackend` (production) are `typing.Protocol` classes for swappable implementations. Analysis has 5 concrete analyzers (place/camera/subtitle/speech/rhythm); production currently uses `ClaudeVisionBackend`.
+`Analyzer` (analysis) and `VLMBackend` (production) are `typing.Protocol` classes for swappable implementations. Analysis has 5 concrete analyzers (place/camera/subtitle/speech/rhythm); production uses `CLIPBackend` by default or `ClaudeVisionBackend` when configured.
 
 ### Config propagation
 `config/default.yaml` → loaded as dict → each module reads its section:
@@ -111,9 +113,14 @@ def test_something():
     asyncio.run(_run())
 ```
 
+### Backend selection
+`config/default.yaml` → `production.feature_extraction.backend`:
+- `"clip"` (default): Local CLIP model, no API key needed
+- `"claude"`: Claude Vision API, requires ANTHROPIC_API_KEY
+
 ### Template matching composite scoring
 Weights: place_overlap 0.30, duration_fit 0.20, camera_variety 0.15, rhythm_match 0.15, shot_count_fit 0.20.
 
 ## Stack
 
-Python 3.12, Pydantic v2, Click, Rich, OpenCV, CLIP, faster-whisper, EasyOCR, librosa, Anthropic SDK (Claude Vision for production), SQLite, FFmpeg, yt-dlp.
+Python 3.12, Pydantic v2, Click, Rich, OpenCV, CLIP (default production backend, local), faster-whisper, EasyOCR, librosa, Anthropic SDK (Claude Vision, optional production backend), SQLite, FFmpeg, yt-dlp.
